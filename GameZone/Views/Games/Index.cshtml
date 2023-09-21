@@ -1,0 +1,37 @@
+﻿@model List<Game>
+@{
+    ViewData["Title"] = "Games";
+}
+<div class="container">
+
+    <div class="row">
+        @foreach (var game in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-3">
+                <a asp-controller="Games" asp-action="GameDetails" asp-route-id="@game.Id" style="text-decoration:none">
+                    <div class="card d-flex justify-content-end align-items-start" style=" border:solid 2px orange; border-bottom:none; background-image:url(@string.Format(" /Uploads/Images/{0}",game.CoverName)); 
+                    height:300px; background-size:cover; background-position:center">
+                        <div class="bg-primary mb-2 pe-2 ps-1" style="border-start-end-radius :10px;border-end-end-radius :10px">
+                            @game.Category?.Name
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer bg-primary  text-white d-flex justify-content-between align-items-center">
+                        <h3>@game.Name</h3>
+                        
+                        <div class="me-2">
+                            @foreach (var device in game.Devices)
+                            {
+                                <i class="@device.Device.Icon text-black fs-5"></i>
+                            }
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/sweetalert.js"></script>
+}

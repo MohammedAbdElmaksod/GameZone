@@ -1,0 +1,67 @@
+﻿@model GameVM
+@{
+    ViewData["Title"] = "Create Game";
+}
+<div class="row">
+    <div class="col-md-6">
+        <form asp-controller="Games" asp-action="AddGame" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="form-label mt-4"></label>
+                <input type="text" class="form-control" asp-for="Name" placeholder="Enter Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="form-label mt-4"></label>
+                <textarea id="DescArea" type="text" class="form-control" asp-for="Description" placeholder="Enter Descriptipon"></textarea>
+                <span class="text-danger" asp-validation-for="Description"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4" asp-for="CategoryId"></label>
+                <select class="form-select" asp-for="CategoryId" asp-items="Model.Categories"
+                        data-placeholder="select Category"
+                        data-minimum-results-for-search="Infinity">
+                    <option></option>
+                </select>
+                <span class="text-danger" asp-validation-for="CategoryId"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label mt-4" asp-for="SelectedDevices"></label>
+                <select class="form-select" asp-for="SelectedDevices" asp-items="Model.Devices" data-placeholder="select Devices">
+                    <option></option>
+                </select>
+                <span class="text-danger" asp-validation-for="SelectedDevices"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cover" class="form-label mt-4"></label>
+                <input type="file"
+                       data-rule-extension="@AllowedExtensionsAndMaxSize.allowedExtensions.Replace(".",string.Empty)"
+                       data-msg-extension="only these extension @AllowedExtensionsAndMaxSize.allowedExtensions are allowed "
+                       data-rule-filesize="@AllowedExtensionsAndMaxSize.allowedSizeByByte"
+                       data-msg-filesize="max size is @AllowedExtensionsAndMaxSize.allowedSizeByMB MB"
+                       class="form-control" asp-for="Cover" onchange="Helper.previewImg(event)">
+                <small>
+                    Only @AllowedExtensionsAndMaxSize.allowedExtensions are Allowed
+                    and Max Size is @AllowedExtensionsAndMaxSize.allowedSizeByMB MB
+                </small>
+                <span class="text-danger d-block" asp-validation-for="Cover"></span>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Save</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex justify-content-center overflow-hidden">
+            <img id="previewImg" class="mt-5 rounded-4" style="width:300px; height:450px; display:none" />
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/helper.js" asp-append-version="true"></script>
+    <script>
+        $.validator.addMethod('filesize', function (value, ele, param) {
+            return this.optional(ele) || ele.files[0].size <= param;
+        });
+    </script>
+
+}

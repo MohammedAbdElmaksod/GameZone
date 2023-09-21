@@ -1,0 +1,73 @@
+﻿@model List<Game>
+@{
+    ViewData["Title"] = "Games";
+}
+<div class="content-wrapper">
+    <a class="btn btn-info mb-3" asp-area="" asp-controller="Games" asp-action="AddGame">
+        <i class="bi bi-patch-plus "></i>
+        Add Game
+    </a>
+    <div class="page-header">
+        <h3 class="page-title"> Games </h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <table id="gamesTable" class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> Cover </th>
+                                <th> Title </th>
+                                <th> Category </th>
+                                <th> Support Devices </th>
+                                <th> Actions </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int c = 1;
+                                foreach (var game in Model)
+                                {
+                                    <tr>
+                                        <td> @c </td>
+                                        <td> <img style="width:50px;height:50px;" src="@string.Format("/Uploads/Images/{0}",game.CoverName)" /> </td>
+                                        <td> @game.Name </td>
+                                        <td> @game.Category?.Name </td>
+                                        <td>
+                                            @foreach (var device in game.Devices)
+                                            {
+                                                <span class="d-block">
+                                                    <i class="@device.Device.Icon"></i>&nbsp;
+                                                    @device.Device.Name
+                                                </span>
+
+                                                <br>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a style="text-decoration:none" class="btn-sm btn-info" asp-area="" asp-controller="Games" asp-action="GameDetails" asp-route-id="@game.Id">Details</a>
+                                            <a style="text-decoration:none" class="btn-sm  btn-warning" asp-area="" asp-controller="Games" asp-action="EditGame" asp-route-id="@game.Id">Edit</a>
+                                            <button class="btn-sm  btn-danger" onclick="sweetAlert.DeleteAlert('','Games','DeleteGame','@game.Id')">Delete</button>
+                                        </td>
+                                    </tr>
+                                    c++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/sweetalert.js"></script>
+    <script src="~/admin/assets/vendors/datatables.net/jquery.datatables.js"></script>
+    <script src="~/admin/assets/vendors/datatables.net-bs4/datatables.bootstrap4.js"></script>
+    <script>
+        $("#gamesTable").DataTable();
+    </script>
+}

@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Devices";
+}
+@model Device
+
+<div class="content-wrapper">
+
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Add Device</h4>
+                    <form class="forms-sample" method="post" asp-area="Admin" asp-controller="Home" asp-action="AddDevice">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input type="text" class="form-control" asp-for="Name" placeholder="Name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Icon"></label>
+                            <input type="text" class="form-control" asp-for="Icon" placeholder="Icon">
+                            <span asp-validation-for="Icon" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-gradient-primary me-2">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="page-header">
+        <h3 class="page-title"> Devices </h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <table id="deviceTable" class="table table-dark table-hover">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> Name </th>
+                                <th> Icon </th>
+                                <th> Actions </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int c = 1;
+                                foreach (var device in ViewBag.devices)
+                                {
+                                    <tr>
+                                        <td> @c </td>
+                                        <td> @device.Name </td>
+                                        <td> <i class="@device.Icon"></i> </td>
+                                        <td>
+                                            <a style="text-decoration:none" class="btn-sm  btn-warning" asp-area="Admin" asp-controller="Home" asp-action="EditDevice" asp-route-id="@device.Id">Edit</a>
+                                            <button class="btn-sm  btn-danger" onclick="sweetAlert.DeleteAlert('Admin','Home','DeleteDevice','@device.Id')">Delete</button>
+                                        </td>
+                                    </tr>
+                                    c++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/sweetalert.js" asp-append-version="true"></script>
+    <script src="~/admin/assets/vendors/datatables.net/jquery.datatables.js"></script>
+    <script src="~/admin/assets/vendors/datatables.net-bs4/datatables.bootstrap4.js"></script>
+    <script>
+        $("#deviceTable").DataTable();
+    </script>
+}
