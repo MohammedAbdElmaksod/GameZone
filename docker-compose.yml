@@ -1,0 +1,30 @@
+#Containers
+services:
+  gamezone:
+    build: .
+    ports:
+      - "8080:80"
+    networks:
+      - net1
+    depends_on:
+      - sqlserver
+    environment:
+      - ConnectionStrings:defaultConnection=Server=sqlserver;Database=GameZone;User Id=sa;Password=mido123@#;Trust Server Certificate=True
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      - net1
+    hostname: sqlserver
+    volumes:
+      - sqldata:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=mido123@#
+    
+#Network
+networks:
+  net1:
+
+#Volumes
+volumes:
+  sqldata:

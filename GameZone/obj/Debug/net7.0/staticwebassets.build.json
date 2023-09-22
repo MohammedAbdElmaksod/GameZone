@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ju+gR7PtuOebHNbbRAHMFr0z8GULFXcPFlZ4ksR45ag=",
+  "Hash": "kTTcEpF4EYDphTVq5b2ryxLzkCF7hep4FCgybgDeGnI=",
   "Source": "GameZone",
   "BasePath": "_content/GameZone",
   "Mode": "Default",
@@ -35343,6 +35343,23 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Images\\0611a725-5b4d-4ce4-bb62-2d01d015ab3b..jpg"
     },
     {
+      "Identity": "D:\\VS\\GameZone\\GameZone\\wwwroot\\Uploads\\Images\\0be553bd-7000-4ab4-8fe4-2f5785d586ce..png",
+      "SourceId": "GameZone",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\GameZone\\GameZone\\wwwroot\\",
+      "BasePath": "_content/GameZone",
+      "RelativePath": "Uploads/Images/0be553bd-7000-4ab4-8fe4-2f5785d586ce..png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Images\\0be553bd-7000-4ab4-8fe4-2f5785d586ce..png"
+    },
+    {
       "Identity": "D:\\VS\\GameZone\\GameZone\\wwwroot\\Uploads\\Images\\11ca386f-10e9-4c8b-ac0b-b0578e208f12..jpg",
       "SourceId": "GameZone",
       "SourceType": "Discovered",
@@ -36225,6 +36242,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Images\\f273b778-3a9d-4280-a653-4c8716da8d11..jpg"
+    },
+    {
+      "Identity": "D:\\VS\\GameZone\\GameZone\\wwwroot\\Uploads\\Images\\f8cd237e-130f-46cd-91b7-fdcf1c08f547..jpg",
+      "SourceId": "GameZone",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\VS\\GameZone\\GameZone\\wwwroot\\",
+      "BasePath": "_content/GameZone",
+      "RelativePath": "Uploads/Images/f8cd237e-130f-46cd-91b7-fdcf1c08f547..jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Images\\f8cd237e-130f-46cd-91b7-fdcf1c08f547..jpg"
     },
     {
       "Identity": "D:\\VS\\GameZone\\GameZone\\wwwroot\\Uploads\\Images\\fa722597-0d68-45df-b05d-ef4cbc55c83b..jpg",

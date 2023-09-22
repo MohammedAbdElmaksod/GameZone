@@ -47,9 +47,9 @@
                                             }
                                         </td>
                                         <td>
-                                            <a style="text-decoration:none" class="btn-sm btn-info" asp-area="" asp-controller="Games" asp-action="GameDetails" asp-route-id="@game.Id">Details</a>
-                                            <a style="text-decoration:none" class="btn-sm  btn-warning" asp-area="" asp-controller="Games" asp-action="EditGame" asp-route-id="@game.Id">Edit</a>
-                                            <button class="btn-sm  btn-danger" onclick="sweetAlert.DeleteAlert('','Games','DeleteGame','@game.Id')">Delete</button>
+                                            <a style="text-decoration:none" class="btn-sm btn-info" asp-area="" asp-controller="Games" asp-action="GameDetails" asp-route-id="@game.Id"><i class="bi bi-ticket-detailed"></i></a>
+                                            <a style="text-decoration:none" class="btn-sm  btn-warning" asp-area="" asp-controller="Games" asp-action="EditGame" asp-route-id="@game.Id"><i class="bi bi-pencil-fill"></i></a>
+                                            <a class="btn-sm  btn-danger js-delete" data-id="@game.Id"><i class="bi bi-trash3"></i></a>
                                         </td>
                                     </tr>
                                     c++;
@@ -64,7 +64,8 @@
     </div>
 </div>
 @section Scripts{
-    <script src="~/js/sweetalert.js"></script>
+    <script src="~/js/sweetalert.js" asp-append-version="true"></script>
+    <script src="~/js/game-delete.js" asp-append-version="true"></script>
     <script src="~/admin/assets/vendors/datatables.net/jquery.datatables.js"></script>
     <script src="~/admin/assets/vendors/datatables.net-bs4/datatables.bootstrap4.js"></script>
     <script>

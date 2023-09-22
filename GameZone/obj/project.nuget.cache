@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xr7MN1rP7awnuhW4zcC6e2WB/ZGdvrjUjQBD4mDSCMxStPwP025Wm5jH6yXHdZny8tXgROPxVEJcTOJZ+bF+WQ==",
+  "dgSpecHash": "etTm5kzGumlpEw0WNV67amY0EfMKIxLBxKyHNuE8FDLjJLRUQbLMrf0KneZLxbssq3c4Jedob87S4LVWhvy3Vw==",
   "success": true,
   "projectFilePath": "D:\\VS\\GameZone\\GameZone\\GameZone.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
     "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Mohamed\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Mohamed\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
